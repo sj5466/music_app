@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --bg: #616DEA;
+    --bg1:#27283A;
+    --bg2:#3e3f53;
+    --blue:#648EEA;
+    --violet: #5D3DE4;
+    --white: #fff;
+    --shadow: rgba(0,0,0,0.8);
+    --shadow1: rgba(0,0,0,0.5);
+    --screen: #1D1E2E;
+    --black: #000;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(var(--bg) 0%, var(--violet) 100%);
+}
+.wrap{
+    width: 380px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    border: 10px solid var(--black);
+    background: var(--screen);
+    box-shadow: 10px 10px 20px var(--shadow1) ;
+}
+.wrap i{
+    cursor: pointer;
+}
+.top_bar, .progress_area .timer,
+.controls, .music_list .header, .music_list li{
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top_bar{
+    padding: 20px 30px;
+}
+.top_bar i{
+    color: var(--white);
+}
+.top_bar #arrow{
+    transform: rotate(90deg);
+    font-size: 30px;
+}
+.top_bar #bell{
+    font-size: 20px;
+}
+.top_bar span{
+    text-transform: uppercase;
+    font-size: 18px;
+    color: var(--white);
+}
+.img{
+    padding: 0px 30px;
+}
+.img_area{
+    height: 256px;
+    width: 100%;
+    margin-top: 25px;
+    overflow: hidden;
+    border: 15px;
+    border-radius: 13px;
+}
+.img_area img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item_bg{
+    
+    background: linear-gradient( 160deg, rgba(255,255,255,0.2) 0%, var(--bg2) 10%, var(--bg1)40%);
+    margin-top: 70px;
+    padding: 15px 30px;
+    border-radius: 15px;
+}
+.song_details{
+    text-align: center;
+    margin: 10px 0;
+    margin: 30px 0;
+    color: var(--white);
+}
+.song_details .name{
+    font-size: 18px;
+}
+.song_details .artist{
+    opacity: 0.9;
+    font-size: 16px;
+}
+.progress_area{
+    height: 6px;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.progress_area .progress_bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--violet) 100%);
+}
+.progress_bar::before{
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #000;
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease ;
+}
+.progress_area:hover .progress_bar::before{
+    opacity: 1;
+}
+.progress_area .timer{
+    margin-top: -30px;
+}
+.timer span{
+    font-size: 13px;
+    color: var(--white);
+}
+.controls{
+    margin: 40px 0 40px 0;
+}
+
+.controls i{
+    color: var(--white);
+}
+.music_list{
+    position: absolute;
+    left: 0;
+    bottom: -53%;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px -10px 20px  var(--shadow);
+    transition: all 0.14s ease-in-out;
+}
+.play_pause #play{
+    margin-top: 5px;
+}
+.music_list.show{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+.music_list .header .row{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+}
+.header .row i{
+    cursor: default;
+}
+.header .row span{
+    margin-left: 5px;
+}
+.header #close{
+    font-size: 22px;
+}
+.music_list ul{
+    margin: 10px 0;
+    max-height: 260px;
+    overflow-y: auto;
+}
+.music_list ul::-webkit-scrollbar{
+    width: 0px;
+}
+.music_list ul li{
+    cursor: pointer;
+    list-style: none;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+.music_list ul li .row span{
+    font-size: 17px;
+}
+ul li .row p{
+    opacity: 0.9;
+}
+ul li .audio-duration{
+    font-size: 16px;
+}
+ul li.playing{
+    color: var(--blue);
+    pointer-events: none;
+}

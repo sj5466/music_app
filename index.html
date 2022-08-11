@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뮤직어플만들기</title>
+
+<!-- style -->
+<link rel="stylesheet" href="./css/style.css">
+<!-- icon -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="wrap">
+        <div class="top_bar">
+            <i id="arrow" class="material-icons">expand_more</i>
+            <span>now playing</span>
+            <i id="bell" class="material-icons">notifications</i>
+        </div>
+        <div class="img">
+            <div class="img_area">
+                <img src="./images/music-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="item_bg">
+            <div class="song_details">
+                <p class="name">Harley Bird - Home</p>
+                <p class="artist">Jordan Schor</p>
+            </div>
+            <div class="progress_area">
+                <div class="progress_bar"></div>
+                <div class="timer">
+                    <span class="current"></span>
+                    <span class="duration"></span>
+                </div>
+                <audio id="main_audio" src=""></audio>
+            </div>
+            <div class="controls">
+                <i id="repeat" class="material-icons" title="Playlist looped">repeat</i>
+                <i id="prev" class="material-icons">skip_previous</i>
+                <div class="play_pause">
+                    <i id="play" class="material-icons">play_arrow</i>
+                </div>
+                <i id="next" class="material-icons" >skip_next</i>
+                <i id="more_music" class="material-icons" >menu</i>
+            </div>
+        </div>
+        <div class="music_list">
+            <div class="header">
+                <div class="row">
+                    <i class="material-icons">menu</i>
+                    <span>Music list</span>
+                </div>
+                <i id="close" class="material-icons">close</i>
+            </div>
+            <ul>
+            </ul>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="./js/music_list.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
